@@ -26,7 +26,7 @@ class InnerClassTestConfigApplicationTest {
 
 	@Test
 	void overrideBeanDefinedViaServiceAnnotation() {
-		// test fails, if myBeanMock is not a mock
+		// test fails, if anotherBeanMock is not a mock
 		verifyNoInteractions(anotherBeanMock);
 	}
 	
