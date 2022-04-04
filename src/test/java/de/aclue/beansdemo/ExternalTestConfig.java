@@ -11,5 +11,10 @@ public class ExternalTestConfig {
 	public MyBean myBean() {
 		return Mockito.mock(MyBean.class);
 	}
+
+	@Bean
+	public AnotherBean anotherBean() {
+		return Mockito.mock(AnotherBean.class);
+	}
 	
 }

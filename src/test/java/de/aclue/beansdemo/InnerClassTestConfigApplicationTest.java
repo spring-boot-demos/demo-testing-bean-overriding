@@ -15,10 +15,19 @@ class InnerClassTestConfigApplicationTest {
 	@Autowired
 	private MyBean myBeanMock;
 
+	@Autowired
+	private AnotherBean anotherBeanMock;
+
 	@Test
-	void contextLoads() {
+	void overrideBeanDefinedViaBeanMethod() {
 		// test fails, if myBeanMock is not a mock
 		verifyNoInteractions(myBeanMock);
+	}
+
+	@Test
+	void overrideBeanDefinedViaServiceAnnotation() {
+		// test fails, if myBeanMock is not a mock
+		verifyNoInteractions(anotherBeanMock);
 	}
 	
 	@TestConfiguration
@@ -27,6 +36,11 @@ class InnerClassTestConfigApplicationTest {
 		@Bean
 		public MyBean myBean() {
 			return Mockito.mock(MyBean.class);
+		}
+		
+		@Bean
+		public AnotherBean anotherBean() {
+			return Mockito.mock(AnotherBean.class);
 		}
 	}
 

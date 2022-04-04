@@ -14,9 +14,18 @@ public class ExternalTestConfigApplicationTest {
 	@Autowired
 	private MyBean myBeanMock;
 
+	@Autowired
+	private AnotherBean anotherBeanMock;
+
 	@Test
-	void contextLoads() {
+	void overrideBeanDefinedViaBeanMethod() {
 		// test fails, if myBeanMock is not a mock
 		verifyNoInteractions(myBeanMock);
+	}
+
+	@Test
+	void overrideBeanDefinedViaServiceAnnotation() {
+		// test fails, if myBeanMock is not a mock
+		verifyNoInteractions(anotherBeanMock);
 	}
 }
