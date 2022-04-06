@@ -11,9 +11,4 @@ public class BeansDemoApplication {
 		SpringApplication.run(BeansDemoApplication.class, args);
 	}
 	
-	@Bean
-	public MyBean myBean() {
-		return new MyBean();
-	}
-
 }
